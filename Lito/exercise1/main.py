@@ -6,8 +6,8 @@ from xslxtojson import xslxtojson
 class main:
 
     def __init__(self):
-        self.excel_filepath: str = 'C:/Users/UA149NV/OneDrive - EY/Desktop/Python Bootcamp/pythonbootcamp.xlsx'
-        self.json_filepath: str = 'C:/Users/UA149NV/OneDrive - EY/Desktop/Python Bootcamp/output.json'
+        self.excel_filepath: str = 'C:/Users/UA149NV/source/repos/python-bootcamp-exercise/Lito/pythonbootcamp.xlsx'
+        self.json_filepath: str = 'C:/Users/UA149NV/source/repos/python-bootcamp-exercise/Lito/output.json'
         self.executexslstojson()
 
     def executexslstojson(self):
