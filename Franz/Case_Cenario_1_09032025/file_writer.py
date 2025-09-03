@@ -26,7 +26,7 @@ class file_writer:
 
     #Properties Get
     def get_wheel_count(self):
-        return self.wheel_count;
+        return self.wheel_count
     
 
 #[END] - Class Body

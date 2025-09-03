@@ -18,7 +18,7 @@ try:
             content = reader.get_content()
             
             writer = file_writer(content)
-            write_success = writer.write_to_file("output.txt")
+            write_success = writer.write_to_file("output.json")
             
             if write_success:
                 print("File written successfully.")
