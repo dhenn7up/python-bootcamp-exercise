@@ -1,6 +1,3 @@
-import os
-import sys
-
 import json
 import pandas as panda
 
@@ -13,24 +10,21 @@ class file_writer:
         self.success = False;
         self.content = content;
     
-
     def write_to_file(self, file_path: str):
         success = True
         try:
             data_list: list = self.content
-            # Convert object to string
-            def serialize(obj):
-                if isinstance(obj, panda.Timestamp):
-                    return obj.strftime('%d-%m-%Y')
-                raise TypeError(f"Type {type(obj)} not serializable")
-            # Replace NaN with None
             for row in data_list:
                 for key, value in row.items():
                     if panda.isna(value):
-                        row[key] = None
+                        row[key] = None # If NaN, mark them as null/none
+                    elif isinstance(value, panda.Timestamp):
+                        row[key] = value.strftime('%d-%m-%Y') # If obj timestamp, convert it to a formatted string
+                    elif isinstance(value, str):
+                        row[key] = value.strip() # Trim string values
             # Serialize List to json
             with open(file_path, 'w') as json_file:
-                json.dump(data_list, json_file, default=serialize, indent=4)
+                json.dump(data_list, json_file, indent=4)
 
         except Exception as e:
             print(f"An error occurred while writing to the file: {e}")
