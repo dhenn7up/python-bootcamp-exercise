@@ -1,8 +1,11 @@
 import sys
 import os
 
-file_path ="C:\\Users\\KC114QJ\\OneDrive - EY\\Documents\\VS Python\\PythonTraining.xlsx"
-os.chdir(sys.path[0])
+current_dir = os.getcwd()
+
+#print(f"Current working directory: {current_dir}")
+
+file_path ="PythonTraining.xlsx"
 
 from file_reader import file_reader
 from file_writer import file_writer
@@ -15,7 +18,7 @@ try:
     if success:
         content = reader.get_content()        
         writer = file_writer(content)
-        write_success = writer.write_to_file("output.txt")
+        write_success = writer.write_to_file("output.json")
         
         if write_success:
             print("File written successfully.")
