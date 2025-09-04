@@ -2,7 +2,10 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv  # For loading environment variables from a .env file
-from utils.io_handler import FileReader, JsonWriter  # Custom utility classes for file I/O
+
+# Custom utility classes
+from utils.file_reader import FileReader
+from utils.file_writer import JsonWriter
 
 def main():
     # Load environment variables from .env file
