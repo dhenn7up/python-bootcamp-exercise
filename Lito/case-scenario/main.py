@@ -8,16 +8,16 @@ from file_reader import file_reader
 from file_writer import file_writer
 
 try:
-
     reader = file_reader()
     success = reader.read_file()
-
+    
     if success:
+        # get excel content
         content = reader.get_content()
-        
+        # execute json file writer
         writer = file_writer(content)
-        json_filepath: str = f"{Path(__file__).parent}/output.json"
-
+        dynamic_path: str = os.path.dirname(__file__)
+        json_filepath: str = os.path.join(dynamic_path, 'output.json')
         write_success = writer.write_to_file(json_filepath)
         
         if write_success:

@@ -1,4 +1,4 @@
-from pathlib import Path
+import os
 import pandas as panda
 
 #[START] - Class Body
@@ -14,7 +14,8 @@ class file_reader:
     def read_file(self):
         self.success = True
         try:
-            excel_filepath: str = f"{Path(__file__).parent}/pythonbootcamp.xlsx"
+            dynamic_path: str = os.path.dirname(__file__)
+            excel_filepath: str = os.path.join(dynamic_path, 'pythonbootcamp.xlsx')
             excel_data = panda.read_excel(excel_filepath)
             data_list = excel_data.to_dict(orient='records')
             for data in data_list:
