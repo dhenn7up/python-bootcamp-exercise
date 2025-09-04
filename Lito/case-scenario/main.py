@@ -3,6 +3,7 @@ import os
 
 os.chdir(sys.path[0])
 
+from pathlib import Path
 from file_reader import file_reader
 from file_writer import file_writer
 
@@ -15,7 +16,8 @@ try:
         content = reader.get_content()
         
         writer = file_writer(content)
-        json_filepath: str = 'C:/Users/UA149NV/source/repos/python-bootcamp-exercise/Lito/output.json'
+        json_filepath: str = f"{Path(__file__).parent}/output.json"
+
         write_success = writer.write_to_file(json_filepath)
         
         if write_success:

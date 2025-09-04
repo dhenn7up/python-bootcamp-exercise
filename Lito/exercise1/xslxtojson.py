@@ -1,5 +1,3 @@
-import os
-import sys
 import json
 import pandas as panda
 
@@ -14,26 +12,27 @@ class xslxtojson:
             excel_data = panda.read_excel(excelpath)
             data_list = excel_data.to_dict(orient='records')
             return data_list
+        
         except Exception as e:
             return None
 
-    def write_listtojson(self, jsonpath: str, data_list: list) -> bool:
+    def write_listtojson(self, jsonpath: str, data_list: dict) -> bool:
         # Save list as a json file
         try:
-            # Convert object to string
-            def serialize(obj):
-                if isinstance(obj, panda.Timestamp):
-                    return obj.strftime('%d-%m-%Y')
-                raise TypeError(f"Type {type(obj)} not serializable")
-            # Replace NaN with None
             for row in data_list:
                 for key, value in row.items():
                     if panda.isna(value):
-                        row[key] = None
+                        row[key] = None # If NaN, mark them as null/none
+                    elif isinstance(value, panda.Timestamp):
+                        row[key] = value.strftime('%d-%m-%Y') # If obj timestamp, convert it to a formatted string
+                    elif isinstance(value, str):
+                        row[key] = value.strip() # Trim string values
             # Serialize List to json
             with open(jsonpath, 'w') as json_file:
-                json.dump(data_list, json_file, default=serialize, indent=4)
+                # json.dump(data_list, json_file, default=serialize, indent=4)
+                json.dump(data_list, json_file, indent=4)
             return True
+        
         except Exception as e:
             return False
 
