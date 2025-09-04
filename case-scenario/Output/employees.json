@@ -9,9 +9,9 @@
         "SecondaryPhone": "123-555-0200         ",
         "Title": "Ms.",
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 2,
@@ -23,9 +23,9 @@
         "SecondaryPhone": null,
         "Title": "Mr.",
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 3,
@@ -37,9 +37,9 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 4,
@@ -51,9 +51,9 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 5,
@@ -65,9 +65,9 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 6,
@@ -79,9 +79,9 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 7,
@@ -93,9 +93,9 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 8,
@@ -107,9 +107,9 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 9,
@@ -121,9 +121,9 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     },
     {
         "EmployeeID": 10,
@@ -135,8 +135,8 @@
         "SecondaryPhone": null,
         "Title": null,
         "AddedBy": "Admin",
-        "AddedOn": "2024-09-21T00:00:00",
+        "AddedOn": "2024-09-21 00:00:00",
         "ModifiedBy": "Admin",
-        "ModifiedOn": "2024-09-21T00:00:00"
+        "ModifiedOn": "2024-09-21 00:00:00"
     }
 ]

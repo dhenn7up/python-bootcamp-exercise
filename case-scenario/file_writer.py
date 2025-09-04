@@ -18,15 +18,9 @@ class file_writer_class:
             json_data = []
             for index, row in self.content.iterrows():
                 row_dict = row.to_dict()
+                row_dict["AddedOn"] = str(row_dict["AddedOn"])
+                row_dict["ModifiedOn"] = str(row_dict["ModifiedOn"])
                 json_data.append(row_dict)
-
-            # Convert Timestamps to ISO format (string)
-            for col in self.content.columns:
-                if pd.api.types.is_datetime64_any_dtype(self.content[col]):
-                    self.content[col] = self.content[col].apply(lambda x: x.isoformat() if x is not None else None)
-
-            # Convert to list of dictionaries
-            json_data = self.content.to_dict(orient='records')
 
             # Write the JSON list to a .json file
             with open(file_path, 'w', encoding='utf-8') as f:
@@ -37,9 +31,9 @@ class file_writer_class:
             print(f"An error occurred while writing to the file: {e}")
             self.success = False
 
-    #Properties Get
-    def get_wheel_count(self):
-        return self.wheel_count;
+    # #Properties Get
+    # def get_wheel_count(self):
+    #     return self.wheel_count;
     
 
 #[END] - Class Body
