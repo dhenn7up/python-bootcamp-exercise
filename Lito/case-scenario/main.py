@@ -3,7 +3,6 @@ import os
 
 os.chdir(sys.path[0])
 
-from pathlib import Path
 from file_reader import file_reader
 from file_writer import file_writer
 
