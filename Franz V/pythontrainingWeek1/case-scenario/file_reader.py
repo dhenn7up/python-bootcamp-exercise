@@ -2,6 +2,12 @@ import os
 import sys
 import pandas as pd
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
+
+sheet_namepath = os.getenv('SHEET_NAME')
+
 #[START] - Class Body
 class file_reader:
     #--------------------------------------------------------------------------------------
@@ -18,9 +24,9 @@ class file_reader:
             # Simulate file reading logic here
             # Load the Excel file
             
-            self.content = pd.read_excel(excel_file,sheet_name='Employee')
+            self.content = pd.read_excel(excel_file,sheet_name=sheet_namepath)
             
-            pass
+            
         except Exception as e:
             self.success = False
             print(f"An error occurred while reading the file: {e}")
