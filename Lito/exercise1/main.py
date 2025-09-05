@@ -1,7 +1,5 @@
-import os
-import sys
-
 from xslxtojson import xslxtojson
+from pathlib import Path
 
 class main:
 

@@ -1,4 +1,5 @@
-import json
+import os
+import sys
 
 #[START] - Class Body
 class file_writer:
@@ -7,21 +8,24 @@ class file_writer:
     #--------------------------------------------------------------------------------------
     def __init__(self, content):
         self.success = False;
-        self.content = content; 
+        self.content = content;
+    
 
-    def write_to_file(self,file_path: str):
-        self.success = True
+    def write_to_file(self, file_path: str):
+        success = True
         try:
-            data = self.content
-            if hasattr(data, "to_dict"):
-                data = data.to_dict(orient="records")
-            with open(file_path, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4, default=str)
-            print(f"Data written to JSON file '{file_path}' successfully.")
+            import pandas as pd
+            if isinstance(self.content, pd.DataFrame):
+                self.content.to_json(file_path, orient='records', indent=4)
+            else:
+                print("Content is not a pandas DataFrame.")
+                success = False
         except Exception as e:
+            import traceback
             print(f"An error occurred while writing to the file: {e}")
-            self.success = False
-        return self.success
+            traceback.print_exc()
+            success = False
+        return success
 
     #Properties Get
     def get_wheel_count(self):

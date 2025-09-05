@@ -7,25 +7,26 @@ from file_reader import file_reader
 from file_writer import file_writer
 
 try:
+
     reader = file_reader()
     success = reader.read_file()
-    
+     
+     # Uncomment to debug content after reading
     if success:
-        # get excel content
         content = reader.get_content()
-        # execute json file writer
+        print("Type of content:", type(content))  # Debug: Check type
         writer = file_writer(content)
-        dynamic_path: str = os.path.dirname(__file__)
-        json_filepath: str = os.path.join(dynamic_path, 'output.json')
-        write_success = writer.write_to_file(json_filepath)
+        write_success = writer.write_to_file(r"C:\Users\GW433QS\OneDrive - EY\Attachments\Desktop\Phyton Training\Week1\case-scenario\output.json")
         
         if write_success:
             print("File written successfully.")
         else:
             print("Failed to write the file.")
-    else:
-        print("Failed to read the file.")
-
 
 except Exception as e:
-    print(f"An error occurred: {e}")
+    import traceback
+    print(f"An error occurred while writing to the file: {e}")
+    traceback.print_exc()
+    success = False
+
+

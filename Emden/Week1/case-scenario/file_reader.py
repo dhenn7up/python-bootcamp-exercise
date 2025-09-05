@@ -1,4 +1,4 @@
-import openpyxl
+import pandas as pd
 
 #[START] - Class Body
 class file_reader:
@@ -6,34 +6,26 @@ class file_reader:
     # Initialize all variables used in the class
     #--------------------------------------------------------------------------------------
     def __init__(self):
-        self.success = False
-        self.content = None
-        self.file_path = None
+        self.success = False;
+        self.content = None;
 
-    #--------------------------------------------------------------------------------------
-    # Method to read data from an Excel file
-    #--------------------------------------------------------------------------------------
+    #Methods
     def read_excel(self, file_path="C:\\Users\\JV833VJ\\OneDrive - EY\\Documents\\Python Lessons\\PythonTraining.xlsx", sheet_name="Employee"):
         self.success = True
-        self.file_path = file_path  # Store the file path
         try:
-            wb = openpyxl.load_workbook(file_path, data_only=True)
-            ws = wb[sheet_name] if sheet_name else wb.active
-            self.content = [
-                [cell for cell in row]
-                for row in ws.iter_rows(values_only=True)
-            ]
+            df = pd.read_excel(file_path, sheet_name=sheet_name)
+            self.content = df
             print(f"Excel file '{file_path}' read successfully.")
         except Exception as e:
             self.success = False
-            print(f"An error occurred while reading the Excel file: {e}")
-            self.content = None
-        return self.success
+            print(f"An error occurred while reading the file: {e}")
+            
+        return self.success        
 
-    #--------------------------------------------------------------------------------------
-    # Property to get the content
-    #--------------------------------------------------------------------------------------
+    #Properties Get
     def get_content(self):
-        return self.content
+        return self.content;
+
+    
 
 #[END] - Class Body

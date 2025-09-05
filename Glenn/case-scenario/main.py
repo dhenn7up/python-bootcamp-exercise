@@ -9,7 +9,7 @@ from file_writer import file_writer
 try:
 
     reader = file_reader()
-    success = reader.read_excel()
+    success = reader.read_file()
 
     if success:
         content = reader.get_content()
