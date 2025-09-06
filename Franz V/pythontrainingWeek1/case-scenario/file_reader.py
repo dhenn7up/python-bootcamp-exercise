@@ -27,6 +27,11 @@ class file_reader:
             self.content = pd.read_excel(excel_file,sheet_name=sheet_namepath)
             
             
+            # Convert datetime columns to string to avoid JSON serialization issues
+            for datacol in self.content.select_dtypes(include=['datetime64[ns]']).columns:
+                self.content[datacol] = self.content[datacol].astype(str)
+            print("Converted datetime column to string:", datacol)
+            
         except Exception as e:
             self.success = False
             print(f"An error occurred while reading the file: {e}")
@@ -36,8 +41,6 @@ class file_reader:
     #Properties Get
     def get_content(self):
         return self.content
-        
-
     
 
 #[END] - Class Body
